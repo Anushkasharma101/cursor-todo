@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Still — a calm to-do list that keeps your tasks in the browser."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Still — To-do</title>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="brand-block">
+        <p class="brand">Still</p>
+        <h1 class="headline">What needs doing today?</h1>
+        <p class="lede">
+          Add a task, check it off when it’s done, and clear what you no longer
+          need. Everything stays in this browser until you remove it.
+        </p>
+      </header>
+
+      <form class="composer" id="task-form" autocomplete="off">
+        <label class="sr-only" for="task-input">New task</label>
+        <input
+          id="task-input"
+          name="task"
+          type="text"
+          maxlength="160"
+          placeholder="Write a task…"
+          required
+        />
+        <button type="submit" class="btn-add">Add task</button>
+      </form>
+
+      <section class="list-panel" aria-labelledby="list-heading">
+        <div class="list-meta">
+          <h2 id="list-heading">Your tasks</h2>
+          <p class="count" id="task-count" aria-live="polite">0 open</p>
+        </div>
+
+        <ul class="task-list" id="task-list"></ul>
+
+        <div class="empty" id="empty-state" hidden>
+          <p class="empty-title">Nothing on the list yet</p>
+          <p class="empty-copy">
+            Start with one small thing — a call to make, a page to finish, a
+            reminder for later.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
